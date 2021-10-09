@@ -1,37 +1,30 @@
-## Welcome to GitHub Pages
+# Controlled Music Generation from Unlabeled Data
 
-You can use the [editor on GitHub](https://github.com/oyzh888/GMM_MusicVAE/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Demo midis
+Style midi:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+{% include audio_player.html filename="Output_1.mp3" %}
 
-### Markdown
+Original midi:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+{% include audio_player.html filename="Output_1.mp3" %}
 
-```markdown
-Syntax highlighted code block
+Chord midi:
 
-# Header 1
-## Header 2
-### Header 3
+{% include audio_player.html filename="Output_1.mp3" %}
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
+![Octocat](sources/chord_style_pipeline.jpg)<br>
+Mix a sequence corresponding to a chord style with a random sequence. The note sequence extracted from the GMM model is capable to endow any random note sequence the same style of music tone. Hence, generate meaningful mixture which is harmonic with each other.
 
-**Bold** and _Italic_ and `Code` text
+## Pipeline
+Overview of controlled music generation from unlabeled data with VAE and GMM. Both training procedure and generating procedure are included.
 
-[Link](url) and ![Image](src)
-```
+![Octocat](sources/vae_idea_pipeline.jpg)<br>
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Method
+VAE+GMM pipeline for music generation. Firstly we extract latent variables from different composers' music pieces. Later, the GMM model clusters the latent variables and provides cluster membership information(eg. composer's style). We pass new latent variables sampled from GMM to VAE, then decode them to new music sequences.
 
-### Jekyll Themes
+![Octocat](sources/method_pipeline.png)<br>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/oyzh888/GMM_MusicVAE/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
