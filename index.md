@@ -37,4 +37,7 @@ VAE+GMM pipeline for music generation. Firstly we extract latent variables from 
 
 ![Octocat](assets/images/method_pipeline.png)<br>
 
+## Demo video
+{% include video_player.html id="0SbRwWNrwlQ" %}
+
 
