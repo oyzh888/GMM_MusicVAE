@@ -3,15 +3,15 @@
 ## Demo midis
 Style midi:
 
-{% include audio_player.html filename="Output_1.mp3" %}
+{% include audio_player.html filename="./sources/Output_1.mp3" %}
 
 Original midi:
 
-{% include audio_player.html filename="Output_1.mp3" %}
+{% include audio_player.html filename="./sources/Output_1.mp3" %}
 
 Chord midi:
 
-{% include audio_player.html filename="Output_1.mp3" %}
+{% include audio_player.html filename="./sources/Output_1.mp3" %}
 
 
 ![Octocat](sources/chord_style_pipeline.jpg)<br>
