@@ -1,18 +1,27 @@
 # Controlled Music Generation from Unlabeled Data
 
-## Demo midis
-Style midi:
+## Demo audios and midis
+We input a into the VAE and get its latent vector V1
+[random sequence](./assets/midis/random_sample.mid):
 
-{% include audio_player.html filename="./Output_1.mp3" %}
+{% include audio_player.html filename="./random_sample.mp3" %}
 
-Original midi:
+We use GMM to get a latent vector V2 which can describe a type of chord like:
+[GMM's chord sequence](./assets/midis/chord_sample.mid):
 
-{% include audio_player.html filename="./Output_1.mp3" %}
+{% include audio_player.html filename="./chord.mp3" %}
 
-Chord midi:
+We do interpolation using V1 and V2 and get V3 to the generate, then we get 
+[Meaningful sequence](./assets/midis/merge_sample.mid):
 
-{% include audio_player.html filename="./Output_1.mp3" %}
+{% include audio_player.html filename="./merge_sample.mp3" %}
 
+If we listen the [GMM's chord sequence midi](./assets/midis/merge_sample.mid) and 
+[Meaningful sequence](./assets/midis/chord_sample.mid) together, we will find 
+they are harmonious
+{% include audio_player.html filename="./merge_chord_and_sample.mp3" %}
+
+GMM help us find useful information from latent space effectively!
 
 ![Octocat](assets/images/chord_style_pipeline.jpg)<br>
 Mix a sequence corresponding to a chord style with a random sequence. The note sequence extracted from the GMM model is capable to endow any random note sequence the same style of music tone. Hence, generate meaningful mixture which is harmonic with each other.
